@@ -1,0 +1,389 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Font and Base Settings */
+body, html {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, serif;
+  height: 100%;
+  font-size: 100%;
+}
+
+body {
+  direction: ltr;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #121212; /* Background color for dark mode */
+  color: #ffffff; /* Text color for dark mode */
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #1f1f1f; /* Header background color for dark mode */
+  padding: 1rem;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+header h1 {
+  margin-bottom: 0.5em;
+  background-image: linear-gradient(to right, #757474, #f5f1f1);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: text;
+}
+
+header, footer {
+  background-color: #212121; /* Background color for dark mode */
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end; /* Aligns navigation items to the right */
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 0.5em 1em;
+  display: flex; /* Ensures the link fills the <li> */
+  /*border: 2px solid transparent;*/
+}
+
+nav ul li:hover {
+  border-color: #006D2D; /* Change to the desired hover color */
+}
+
+header nav ul li.active {
+  color: #ffa600; /* Color changes on hover and for active class */
+  border: 2px solid #006D2D;
+}
+
+header nav ul li.active {
+  color: #006D2D;
+  background-color: #3c4638;
+}
+
+nav ul li a:hover {
+  color: #006D2D; /* Change to the desired hover color */
+}
+
+header nav ul li {
+  border: 2px solid #a8a2a2;
+  padding: 0;
+}
+
+/* "About Me" section styles */
+header h2 {
+  position: relative;
+  color: #ffffff;
+  padding-top: 34px;
+  width: 100%;
+}
+
+header h2::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: #006D2D;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.paragraph {
+  margin-bottom: 10px;
+  margin: 2em;
+  padding-bottom: 1em;
+  line-height: 3em;
+}
+
+/* Animation style */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+nav ul li a {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #212121; /* Background color for dark mode */
+  padding: 2em;
+}
+
+.menu, .social {
+  display: flex;
+  list-style-type: none;
+  flex-direction: row;
+  margin-top: 15px;
+  justify-content: center;
+}
+
+.menu li {
+  padding-right: 0.5em;
+}
+
+.social li {
+  padding-right: 0.5em;
+}
+
+.social li a {
+  color: white;
+}
+
+footer p {
+  text-align: center;
+  color: white;
+}
+
+.menu li a:hover {
+  color: #006D2D; /* Change text color on hover */
+}
+
+footer ul li:hover {
+  border-color: #006D2D; /* Change to the desired hover color */
+}
+
+footer .menu li a:hover {
+  color: #006D2D; /* Change text color on hover */
+}
+
+footer .social li a:hover {
+  color: #006D2D; /* Change text color on hover */
+}
+
+/* More specific hover rule for changing border color */
+footer .menu li:hover {
+  border-color: #006D2D; /* Change to the desired hover color */
+}
+
+.project-image {
+  /* Styles for wrapping images based on available space */
+  width: auto; /* Adjust as needed */
+  margin: 0 auto; /* Centering if needed */
+}
+
+.footer .menu a:hover, .footer .social a:hover {
+  text-decoration: underline; /* Adds underline on hover */
+}
+
+.footer .menu a, .footer .social a {
+  color: white; /* Set the link text color to white */
+  padding: 0.5rem; /* Add padding around the links */
+  /* Optional: Removes the underline from links */
+  text-decoration: underline;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+.menu-toggle {
+  display: none; /* Hide Checkbox */
+}
+
+.menu-icon-label {
+  display: none; /* Hidden by default, shown only on small screens */
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+}
+
+.menu-icon-label span {
+  display: block;
+  height: 2px;
+  background-color: #e0e0e0;
+  width: 100%;
+}
+/* Responsive design for small devices */
+@media (max-width: 768px) {
+  .menu-icon-label {
+    display: flex; /* Show hamburger icon */
+    width: 35px; /* Adjusted for touch size */
+    height: 30px; /* Adjusted for touch size */
+  }
+
+  .navigation {
+    display: none; /* Hide navigation menu */
+    flex-direction: column;
+    padding-left: 0; /* Remove padding to align items */
+
+  }
+  .navigation li {
+    margin-top: 8px;
+    display: block; /* Block display to stack the list items */
+    width: 100%; /* Set width to 100% to take up full width */
+
+  }
+
+  .navigation a {
+    display: block; /* Block display to take up full width */
+    width: 100%; /* Set width to 100% to take up full width */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+    padding: 10px 20px; /* Add some padding for touch targets */
+  }
+  .navigation li:active {
+    border: 1px solid #006D2D;
+  }
+
+
+
+  .menu-toggle:checked + .menu-icon-label + nav .navigation {
+    display: block; /* Show menu when hamburger icon is clicked */
+    width:100%;
+  }
+  /* Header and Footer */
+  header, footer {
+    flex-direction: column;
+    align-items: stretch; /* Stretch to full width */
+    width: 100%;
+  }
+
+  /* Navigation Styles */
+  nav {
+    padding: 1em; /* Adds padding inside the nav bar */
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: left; /* Align text to the left */
+  }
+
+  header nav ul li {
+    width: 100%;
+    text-align: center; /* Center text for header nav items */
+    padding: 10px; /* Padding inside each nav item */
+    margin-bottom: 10px; /* Space between nav items */
+  }
+
+  nav ul li a.active {
+    color: #006D2D; /* Color changes on hover and for active class */
+  }
+
+  /* Footer Main Styles */
+  .menu {
+    justify-content: left;
+    flex-direction: column;
+  }
+
+  .menu li {
+    margin-bottom: 1em;
+    list-style-type: '>';
+    color: white;
+  }
+
+  .social {
+    flex-direction: column;
+    justify-content: left;
+    border-top: 1px solid grey;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .social li {
+    padding-bottom: 1em;
+  }
+
+  /* Project Image Styles */
+  .project-image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.contact-form {
+  background: #2a2a2a; /* Contact form background color for dark mode */
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+  color: #ffffff; /* Text color for headings in dark mode */
+  margin-bottom: 20px;
+}
+
+.contact-form p {
+  margin-bottom: 15px;
+}
+
+.contact-form p input,
+.contact-form p textarea {
+  width: 70%;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  background-color: #abafab;
+}
+
+.contact-form button {
+  background-color: #575957;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.contact-form button:hover {
+  background-color: #4cae4c;
+}
+
+.copy-write {
+  padding: 10px;
+  font-size: 100%;
+}
+
+nav ul li a {
+  transition: transform 0.3s ease, border-radius 0.3s ease, background-color 0.3s ease;
+}
+
+nav ul li a:hover, nav ul li a:focus {
+  transform: scale(1.20);
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255); /* Semi-transparent background */
+}
+nav ul li a:hover, nav ul li a:focus {
+  animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+
+
